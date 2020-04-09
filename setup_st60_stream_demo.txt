@@ -20,3 +20,16 @@ cp 20-wired-rx.network /etc/systemd/network/
 systemctl restart systemd-networkd
 cp rx_stream.sh .
 chmod +x rx_stream.sh
+
+hardware setup:
+- Connect both boards via ethernet cable
+- Connect usb micro cable between stlink connector and host machine for
+  console and interact with the board.
+- Host machine : use Tera term (windows) or minicom(linux) to see logs
+  and command entry
+- Tera term/minicom configuration :
+	Speed: 115200,
+	Data : 8 bit,
+	Parity: None,
+	Stop bits: 1,
+	Flow control: None
