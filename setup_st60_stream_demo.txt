@@ -4,22 +4,28 @@ One time procedure:
 Let's name:
 	- one board: tx board
 	- second board: rx board
+2. Prepare a pen drive & copy the config files & scripts in it
+3. Plug in the pen pen drive in any usb port of DK2.
 
 tx board setup:
-copy file 20-wired-tx.network in directory /etc/systemd/network/ using command
-cp 20-wired-tx.network /etc/systemd/network/
-systemctl restart systemd-networkd
-cp tx_stream.sh .
-chmod +x tx_stream.sh
+copy config_files/20-wired-tx.network in directory /etc/systemd/network/ using command
+cp <your pen drive>/config_files/20-wired-tx.network /etc/systemd/network/
+
+execute following command on console:
+	systemctl restart systemd-networkd
+	cp <your pen drive>/scripts/tx_stream.sh .
+	chmod +x tx_stream.sh
 
 
-rx board setup:
+rx board setup (similar procedure just change tx files to rx files):
 
-copy file 20-wired-rx.network directory /etc/systemd/network/ using command
-cp 20-wired-rx.network /etc/systemd/network/
-systemctl restart systemd-networkd
-cp rx_stream.sh .
-chmod +x rx_stream.sh
+copy config_files/20-wired-rx.network in directory /etc/systemd/network/ using command
+cp <your pen drive>/config_files/20-wired-rx.network /etc/systemd/network/
+
+execute following command on console:
+	systemctl restart systemd-networkd
+	cp <your pen drive>/scripts/rx_stream.sh .
+	chmod +x rx_stream.sh
 
 hardware setup:
 - Connect both boards via ethernet cable
