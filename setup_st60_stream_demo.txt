@@ -1,0 +1,22 @@
+One time procedure:
+
+1. Ready two DK2 boards with standard linux release e.g. v1.2.
+Let's name:
+	- one board: tx board
+	- second board: rx board
+
+tx board setup:
+copy file 20-wired-tx.network in directory /etc/systemd/network/ using command
+cp 20-wired-tx.network /etc/systemd/network/
+systemctl restart systemd-networkd
+cp tx_stream.sh .
+chmod +x tx_stream.sh
+
+
+rx board setup:
+
+copy file 20-wired-rx.network directory /etc/systemd/network/ using command
+cp 20-wired-rx.network /etc/systemd/network/
+systemctl restart systemd-networkd
+cp rx_stream.sh .
+chmod +x rx_stream.sh
