@@ -7,6 +7,9 @@ Let's name:
 2. Prepare a pen drive & copy the config files & scripts in it
 3. Plug in the pen pen drive in any usb port of DK2.
 
+or connect the board to internet &
+wget https://github.com/manochavikas/stm32mp1_st60_demo/archive/v1.0_rc1.zip
+
 tx board setup:
 copy config_files/20-wired-tx.network in directory /etc/systemd/network/ using command
 cp <your pen drive>/config_files/20-wired-tx.network /etc/systemd/network/
