@@ -1,36 +1,42 @@
-One time procedure:
+**************** One Time Procedure Start **************
 
 1. Ready two DK2 boards with standard linux release e.g. v1.2.
 Let's name:
 	- one board: tx board
 	- second board: rx board
-2. Prepare a pen drive & copy the config files & scripts in it
-3. Plug in the pen pen drive in any usb port of DK2.
 
-or connect the board to internet &
-wget https://github.com/manochavikas/stm32mp1_st60_demo/archive/v1.0_rc1.zip
+2. Connect the board to internet via ethernet & execute this instruction to download script on board:
+
+
+ST60_DEMO_TAG=v1.0rc2
+echo export ST60_DEMO_TAG > /etc/profile.d/st60_demo_profile.sh
+wget https://raw.githubusercontent.com/manochavikas/stm32mp1_st60_demo/$ST60_DEMO_TAG/scripts/setup_board.sh && chmod +x setup_board.sh
 
 tx board setup:
-copy config_files/20-wired-tx.network in directory /etc/systemd/network/ using command
-cp <your pen drive>/config_files/20-wired-tx.network /etc/systemd/network/
+==============
 
-execute following command on console:
-	systemctl restart systemd-networkd
-	cp <your pen drive>/scripts/tx_stream.sh .
-	chmod +x tx_stream.sh
+./setup_board.sh tx $ST60_DEMO_TAG.zip
 
+rx board setup:
+==============
+./setup_board.sh rx $ST60_DEMO_TAG.zip
 
-rx board setup (similar procedure just change tx files to rx files):
+**************** One Time Procedure finish *************
 
-copy config_files/20-wired-rx.network in directory /etc/systemd/network/ using command
-cp <your pen drive>/config_files/20-wired-rx.network /etc/systemd/network/
+*****************Start streaming demo ******************
 
-execute following command on console:
-	systemctl restart systemd-networkd
-	cp <your pen drive>/scripts/rx_stream.sh .
-	chmod +x rx_stream.sh
+tx board start transmitting stream:
+
+watch ./stm32mp1_st60_demo-$ST60_DEMO_TAG/scripts/tx_script.sh
+
+rx board start receiving stream:
+
+./stm32mp1_st60_demo-$ST60_DEMO_TAG/scripts/rx_script.sh
+
+*********************************************************
 
 hardware setup:
+==============
 - Connect both boards via ethernet cable
 - Connect usb micro cable between stlink connector and host machine for
   console and interact with the board.
