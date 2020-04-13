@@ -8,6 +8,7 @@ fi
 BOARD=$1
 AR_FILE=$2
 
+wget https://github.com/manochavikas/stm32mp1_st60_demo/archive/$AR_FILE
 unzip -o $AR_FILE
 
 #Remove the .zip extension & pick last 6 chars of zipped file name as
