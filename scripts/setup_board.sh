@@ -1,3 +1,4 @@
+#!/bin/bash
 set -x
 if [[ ( $# -ne 2 ) || ( $1 != "rx" &&  $1 != "tx" ) ]]; then
 	echo "correct usager is $0 rx or $0 tx"
