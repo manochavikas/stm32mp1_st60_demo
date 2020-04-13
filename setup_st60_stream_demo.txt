@@ -15,11 +15,11 @@ wget https://raw.githubusercontent.com/manochavikas/stm32mp1_st60_demo/$ST60_DEM
 tx board setup:
 ==============
 
-./setup_board.sh tx $ST60_DEMO_TAG.zip
+./setup_board.sh tx $ST60_DEMO_TAG
 
 rx board setup:
 ==============
-./setup_board.sh rx $ST60_DEMO_TAG.zip
+./setup_board.sh rx $ST60_DEMO_TAG
 
 **************** One Time Procedure finish *************
 
