@@ -9,7 +9,7 @@ Let's name:
 
 
 ST60_DEMO_TAG=ver1.0_rc3
-echo export ST60_DEMO_TAG > /etc/profile.d/st60_demo_profile.sh
+echo export ST60_DEMO_TAG=$ST60_DEMO_TAG > /etc/profile.d/st60_demo_profile.sh
 wget https://raw.githubusercontent.com/manochavikas/stm32mp1_st60_demo/$ST60_DEMO_TAG/scripts/setup_board.sh && chmod +x setup_board.sh
 
 tx board setup:
