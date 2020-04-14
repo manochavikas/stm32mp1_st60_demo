@@ -11,14 +11,7 @@ AR_FILE=$2
 wget https://github.com/manochavikas/stm32mp1_st60_demo/archive/$AR_FILE.zip
 unzip -o $AR_FILE
 
-# Pick last 6 chars of zipped file name as it seems like github
-# provides maximum 7 last characters of tag & master.zip contains
-# 6 characters. So let's use last 6 character of unzipped file
-# with wild character * to change directory.
-
-ar_file_tail=${ar_file_tail: -6}
-echo "last 6 character without extension are = $ar_file_tail"
-cd stm32mp1_st60_demo-*$ar_file_tail
+cd stm32mp1_st60_demo-*$AR_FILE
 
 if [ $BOARD == "rx" ]; then
 	echo "setting up rx board"
