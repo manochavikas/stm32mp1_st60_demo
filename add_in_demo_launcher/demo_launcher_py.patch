@@ -1,0 +1,15 @@
+--- /home/vikasm/mp157/starter_kits/v1.2/stm32mp1-openstlinux-20-02-19_vikas_mounted/images/stm32mp1/vikas_mounted_fs/my_user_mount/demo/demo_launcher.py	2018-03-09 04:34:56.000000000 -0800
++++ demo_launcher.py	2020-05-12 06:25:07.568035516 -0700
+@@ -429,6 +429,12 @@
+             script_window = ScriptWindow(self._parent, self.yaml_configuration["Application"]["Name"], self.yaml_configuration["Application"]["Script"]["Start"])
+             script_window.show_all()
+             response = script_window.run()
++
++            print("just after script_window run and before its destroy")
++            script_window.destroy()
++            script_window = ScriptWindow(self._parent, self.yaml_configuration["Application"]["Name"], self.yaml_configuration["Application"]["Script"]["Stop"])
++            response = script_window.run()
++
+             script_window.destroy()
+             backscript_window.destroy()
+         elif (self.exist_MSG_present(self.yaml_configuration["Application"]["Script"])):
