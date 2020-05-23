@@ -1,6 +1,6 @@
 Application:
     Name: Ethernet
-    Description: streaming
+    Description: streaming tx
     Icon: pictures/logo.png
     Type: script
     Board:
