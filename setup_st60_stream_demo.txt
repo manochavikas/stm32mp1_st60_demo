@@ -8,7 +8,7 @@ Let's name:
 2. Connect the board to internet via ethernet & execute this instruction to download script on board:
 
 
-ST60_DEMO_TAG=ver1.0_rc3
+ST60_DEMO_TAG=ver1.0_rc4
 echo export ST60_DEMO_TAG=$ST60_DEMO_TAG > /etc/profile.d/st60_demo_profile.sh
 wget https://raw.githubusercontent.com/manochavikas/stm32mp1_st60_demo/$ST60_DEMO_TAG/scripts/setup_board.sh && chmod +x setup_board.sh
 
@@ -24,7 +24,13 @@ rx board setup:
 **************** One Time Procedure finish *************
 
 *****************Start streaming demo ******************
+Using touchpanel:
+Use Ethernet streaming tx & Ethernet streaming rx apps on touch panel to
+transmit & recive stream using ethernet
 
+or
+
+Using Keyboard:
 tx board start transmitting stream:
 
 watch ./stm32mp1_st60_demo-$ST60_DEMO_TAG/scripts/tx_script.sh
