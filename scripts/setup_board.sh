@@ -37,5 +37,5 @@ else
         exit 2
 fi
 
-chmod +x add_touch_control.sh
-source add_touch_control.sh
+chmod +x scripts/add_touch_control.sh
+source scripts/add_touch_control.sh
