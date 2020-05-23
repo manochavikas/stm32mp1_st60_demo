@@ -27,6 +27,7 @@ fi
 systemctl enable systemd-networkd
 systemctl restart systemd-networkd
 
+
 if [ $BOARD == "rx" ]; then
 	chmod +x scripts/rx_script.sh
 elif [ $BOARD == "tx" ]; then
@@ -35,3 +36,6 @@ else
         echo "$BOARD is not a correct argument entry"
         exit 2
 fi
+
+chmod +x add_touch_control.sh
+source add_touch_control.sh
